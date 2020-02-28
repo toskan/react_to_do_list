@@ -36,8 +36,10 @@ class Todo extends React.Component {
 		return (
 			<>
 				<input
+					className="to-do-input"
 					ref={this.inputRef}
 					type="text"
+					defaultValue={this.state.value}
 					onKeyUp={this.handleKeyUp}
 					onClick={this.inputValueEmpty}
 				/>

@@ -1,3 +1,6 @@
+body {
+	background-color: #d3d3d3;
+}
 .App {
 	text-align: center;
 }
@@ -43,4 +46,25 @@
 	display: flex;
 	width: 100%;
 	justify-content: center;
+}
+.to-do-input {
+	width: 90%;
+	font-size: 2em;
+	margin-top: 1em;
+	padding: 0.5em;
+}
+h1 {
+	font-size: 2.5em;
+	border-bottom: 0.05em solid black;
+	padding: 0.3em;
+	display: inline-block;
+}
+.to-do-items > input {
+	width: 2.5em;
+	height: 2.5em;
+	margin-top: 1.4em;
+	margin-right: 1em;
+}
+.to-do-items > label {
+	font-size: 3em;
 }
