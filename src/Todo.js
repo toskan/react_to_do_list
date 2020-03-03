@@ -16,8 +16,14 @@ class Todo extends React.Component {
 	// 	...this.state.toDoList,
 	// 	this.inputRef.current.value.trim()
 	// ]; directly (was off by one). Why do I have to save the state value in a variable first and then setState to that?
+	//way to get around is by using a callback function (closure)
+	//this.setState((prevState)=>) {return ({toDoList:{...prevState.toDoList, ...}})}
 	handleKeyUp = e => {
-		if (e.key === 'Enter') {
+		if (
+			e.key === 'Enter' &&
+			this.state.toDoList.indexOf(this.inputRef.current.value.trim()) ===
+				-1
+		) {
 			let tempArray = [
 				...this.state.toDoList,
 				this.inputRef.current.value.trim()
@@ -26,8 +32,15 @@ class Todo extends React.Component {
 				toDoList: tempArray
 			});
 			console.log(tempArray);
-			this.inputRef.current.value = 'Enter Thing that Needs Doing';
+			this.inputRef.current.value = this.state.value;
 			localStorage.setItem('toDoData', JSON.stringify(tempArray));
+		}
+		if (
+			this.state.toDoList.indexOf(this.inputRef.current.value.trim()) !==
+			-1
+		) {
+			alert("That's a thing already needs doing !");
+			this.inputRef.current.value = this.state.value;
 		}
 	};
 
@@ -67,7 +80,7 @@ class Todo extends React.Component {
 						<ListItems
 							toDoList={item}
 							key={`${item}_${index}`}
-							arrayPersist={this.state.toDoList}
+							toDoId={index}
 						/>
 					);
 				})}

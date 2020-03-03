@@ -1,7 +1,6 @@
 import React from 'react';
 
 class ListItems extends React.Component {
-	updatedState;
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -11,8 +10,11 @@ class ListItems extends React.Component {
 	labelRef = React.createRef();
 	divRef = React.createRef();
 	checkBoxChange = () => {
+		const { toDoId } = this.props;
+		console.log(toDoId + ' toDoId');
 		let arrToDoDone;
 		console.log(this.divRef);
+		console.log(this.state.isChecked + ' isCheckedState');
 		let checkedState = !this.state.isChecked;
 		this.setState({
 			isChecked: checkedState
@@ -42,8 +44,8 @@ class ListItems extends React.Component {
 		}
 	};
 	render() {
-		const { toDoList, arrayPersist } = this.props;
-		console.log(arrayPersist);
+		const { toDoList, toDoId } = this.props;
+		console.log(toDoId);
 		return (
 			<div className="to-do-items" ref={this.divRef}>
 				<input
@@ -54,6 +56,7 @@ class ListItems extends React.Component {
 				<label ref={this.labelRef} className="to-do-item">
 					{toDoList}
 				</label>
+				<button>X</button>
 			</div>
 		);
 	}
