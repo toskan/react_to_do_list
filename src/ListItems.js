@@ -37,17 +37,19 @@ class ListItems extends React.Component {
 		const { toDoItem, deleteToDo } = this.props;
 		return (
 			<div className="to-do-items">
-				<input
-					type="checkbox"
-					defaultChecked={this.state.isChecked}
-					onChange={this.checkBoxChange}
-				/>
-				<label ref={this.labelRef} className="to-do-item">
-					{toDoItem}
-				</label>
-				<button className="deleteToDoButton" onClick={deleteToDo}>
-					X
-				</button>
+				<div className="to-do-items-2">
+					<input
+						type="checkbox"
+						defaultChecked={this.state.isChecked}
+						onChange={this.checkBoxChange}
+					/>
+					<label ref={this.labelRef} className="to-do-item">
+						{toDoItem}
+					</label>
+					<button className="delete-todo-button" onClick={deleteToDo}>
+						X
+					</button>
+				</div>
 			</div>
 		);
 	}

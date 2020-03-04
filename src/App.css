@@ -1,5 +1,6 @@
 body {
 	background-color: #d3d3d3;
+	font-family: 'Roboto', sans-serif;
 }
 .App {
 	text-align: center;
@@ -47,26 +48,47 @@ body {
 	width: 100%;
 	justify-content: center;
 }
+.to-do-items-2 {
+	display: flex;
+	width: 50%;
+	justify-content: start;
+}
 .to-do-input {
 	width: 90%;
 	font-size: 2em;
 	margin-top: 1em;
 	padding: 0.5em;
+	cursor: pointer;
 }
 h1 {
 	font-size: 3em;
-	border-bottom: 0.05em solid black;
+	border-bottom: 0.08em solid black;
 	padding: 0.3em;
 	display: inline-block;
 }
-.to-do-items > input {
-	width: 2.5em;
-	height: 2.5em;
-	margin-top: 1.4em;
+.to-do-items-2 > input {
+	width: 2.8em;
+	height: 2.8em;
+	margin-top: 0.9em;
 	margin-right: 1em;
+	cursor: pointer;
 }
-.to-do-items > label {
+.to-do-items-2 > label {
 	font-size: 3em;
+}
+.delete-todo-button {
+	cursor: pointer;
+	margin-left: 1em;
+	margin-top: 0.3em;
+	height: 1.2em;
+	width: 1.2em;
+	font-size: 2em;
+	font-weight: 500;
+	border-color: black;
+	background-color: lightgrey;
+	line-height: 0.7;
+	color: white;
+	background-color: black;
 }
 .fas {
 	font-size: 3em;

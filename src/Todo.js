@@ -28,8 +28,9 @@ class Todo extends React.Component {
 			this.inputRef.current.value = '';
 		}
 		if (
+			e.key === 'Enter' &&
 			this.state.toDoList.indexOf(this.inputRef.current.value.trim()) !==
-			-1
+				-1
 		) {
 			alert(this.inputRef.current.value + ' already needs doing !');
 			this.inputRef.current.value = '';
@@ -54,11 +55,11 @@ class Todo extends React.Component {
 					className="to-do-input"
 					ref={this.inputRef}
 					type="text"
-					placeholder="Enter Thing that Needs Doing"
+					placeholder="enter thing that needs doing"
 					onKeyUp={this.handleKeyUp}
 					onClick={this.inputValueEmpty}
 				/>
-				<h1>Things that need Doing:</h1>
+				<h1>things that need doing</h1>
 				{this.state.toDoList.map((item, index) => {
 					return (
 						<ListItems
