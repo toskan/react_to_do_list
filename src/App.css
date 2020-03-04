@@ -1,9 +1,12 @@
 body {
-	background-color: #d3d3d3;
 	font-family: 'Roboto', sans-serif;
+	color: gainsboro;
+	background-color: #121f26;
 }
 .App {
 	text-align: center;
+	display: flex;
+	flex-direction: column;
 }
 
 .App-logo {
@@ -52,43 +55,43 @@ body {
 	display: flex;
 	width: 50%;
 	justify-content: start;
+	padding: 0.25em;
 }
 .to-do-input {
 	width: 90%;
-	font-size: 2em;
-	margin-top: 1em;
+	font-size: 1.5em;
+	margin-top: 1.5em;
 	padding: 0.5em;
 	cursor: pointer;
+	align-self: center;
 }
 h1 {
-	font-size: 3em;
-	border-bottom: 0.08em solid black;
+	font-size: 2.4em;
+	text-decoration-line: underline;
 	padding: 0.3em;
 	display: inline-block;
 }
 .to-do-items-2 > input {
-	width: 2.8em;
-	height: 2.8em;
-	margin-top: 0.9em;
-	margin-right: 1em;
+	width: 2em;
+	height: 2em;
+	margin-top: 0.8em;
+	margin-right: 1.5em;
 	cursor: pointer;
 }
 .to-do-items-2 > label {
-	font-size: 3em;
+	font-size: 2.1em;
 }
 .delete-todo-button {
 	cursor: pointer;
-	margin-left: 1em;
-	margin-top: 0.3em;
+	margin-left: 1.5em;
 	height: 1.2em;
 	width: 1.2em;
-	font-size: 2em;
+	font-size: 1.7em;
 	font-weight: 500;
-	border-color: black;
-	background-color: lightgrey;
-	line-height: 0.7;
-	color: white;
-	background-color: black;
+	border: none;
+	line-height: 1.8;
+	color: gainsboro;
+	background-color: #121f26;
 }
 .fas {
 	font-size: 3em;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { MdDelete } from 'react-icons/md';
 
 class ListItems extends React.Component {
 	checkedBoxStateInStorage;
@@ -46,8 +47,12 @@ class ListItems extends React.Component {
 					<label ref={this.labelRef} className="to-do-item">
 						{toDoItem}
 					</label>
-					<button className="delete-todo-button" onClick={deleteToDo}>
-						X
+					<button
+						className="delete-todo-button"
+						onClick={deleteToDo}
+						title="Delete Forever"
+					>
+						<MdDelete />
 					</button>
 				</div>
 			</div>
