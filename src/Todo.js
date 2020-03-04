@@ -6,7 +6,6 @@ class Todo extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: 'Enter Thing that Needs Doing',
 			toDoList: []
 		};
 	}
@@ -26,17 +25,13 @@ class Todo extends React.Component {
 			});
 			this.inputRef.current.value = this.state.value;
 			localStorage.setItem('toDoData', JSON.stringify(tempArray));
+			this.inputRef.current.value = '';
 		}
 		if (
 			this.state.toDoList.indexOf(this.inputRef.current.value.trim()) !==
 			-1
 		) {
-			alert('That thing already needs doing !');
-			this.inputRef.current.value = this.state.value;
-		}
-	};
-	inputValueEmpty = e => {
-		if (this.inputRef.current.value === 'Enter Thing that Needs Doing') {
+			alert(this.inputRef.current.value + ' already needs doing !');
 			this.inputRef.current.value = '';
 		}
 	};
@@ -59,7 +54,7 @@ class Todo extends React.Component {
 					className="to-do-input"
 					ref={this.inputRef}
 					type="text"
-					defaultValue={this.state.value}
+					placeholder="Enter Thing that Needs Doing"
 					onKeyUp={this.handleKeyUp}
 					onClick={this.inputValueEmpty}
 				/>
@@ -67,6 +62,11 @@ class Todo extends React.Component {
 				{this.state.toDoList.map((item, index) => {
 					return (
 						<ListItems
+							checkedState={JSON.parse(
+								localStorage.getItem(
+									'checkedOrUnchecked' + item
+								)
+							)}
 							toDoItem={item}
 							toDoList={this.state.toDoList}
 							key={`${item}_${index}`}
